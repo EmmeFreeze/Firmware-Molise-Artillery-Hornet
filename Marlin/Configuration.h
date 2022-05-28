@@ -94,12 +94,12 @@
 //#define X1
 //#define GENIUSPRO
 //#define SWD_X2
-//#define HORNET
+#define HORNET
 
 /*** Section 2 Board Type ***/
 
 //#define MKSGENL         // Stock Board for Genuis and X1
-//#define RUBY            // Stock Board for Genuis Pro, X2 and Hornet
+#define RUBY            // Stock Board for Genuis Pro, X2 and Hornet
 //#define MKSGENLV21      // Choose this if you are using MKS GEN L V2.1
 //#define SKR13           // Choose this if you are using BigTreeTech SKR 1.3
 //#define SKR14           // Choose this if you are using BigTreeTech SKR 1.4
@@ -123,14 +123,14 @@
 
 /*** Section 3 Extruder Type ***/
 
-//#define TITAN       // Stock Extruder
+#define TITAN       // Stock Extruder
 //#define BMG         // Choose this if you are using BMG/BMG Wind
 //#define HEMERA      // Choose this if you are using HEMERA
 //#define MATRIX      // Choose this if you are using MATRIX
 
 /*** Section 4 Drivers Type ***/
 
-//#define TMC_2100        // Stock Drivers
+#define TMC_2100        // Stock Drivers
 //#define TMC_2208_STA    // Standalone Mode
 //#define TMC_2209_STA    // Standalone Mode
 //#define LV_8729
@@ -236,7 +236,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Molise 3.0" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "Emmefreeze" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -2328,14 +2328,14 @@
 // Preheat Constants - Up to 5 are supported without changes
 //
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 180
-#define PREHEAT_1_TEMP_BED     60
+#define PREHEAT_1_TEMP_HOTEND 200
+#define PREHEAT_1_TEMP_BED     65
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED     0 // Value from 0 to 255
 
-#define PREHEAT_2_LABEL       "ABS"
+#define PREHEAT_2_LABEL       "PETG"
 #define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED    100
+#define PREHEAT_2_TEMP_BED    80
 #define PREHEAT_2_TEMP_CHAMBER 35
 #define PREHEAT_2_FAN_SPEED     0 // Value from 0 to 255
 
