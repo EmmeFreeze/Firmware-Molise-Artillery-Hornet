@@ -368,7 +368,7 @@
   #define CUSTOM_MACHINE_NAME "Artillery Sidewinder X2 - " STRING_CONFIG_H_AUTHOR
 #endif
 #ifdef HORNET
-  #define CUSTOM_MACHINE_NAME "Artillery Hornet - " STRING_CONFIG_H_AUTHOR
+  #define CUSTOM_MACHINE_NAME STRING_CONFIG_H_AUTHOR
 #endif
 
 // Printer's unique ID, used by some programs to differentiate between machines.
@@ -836,9 +836,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp 14.58
-    #define DEFAULT_Ki  1.14
-    #define DEFAULT_Kd 46.57
+    #define DEFAULT_Kp 15.25
+    #define DEFAULT_Ki  0.97
+    #define DEFAULT_Kd 59.78
   #endif
 #endif // PIDTEMP
 
@@ -877,9 +877,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 62.75
-  #define DEFAULT_bedKi 9.39
-  #define DEFAULT_bedKd 279.43
+  #define DEFAULT_bedKp 92.75
+  #define DEFAULT_bedKi 15.67
+  #define DEFAULT_bedKd 366.04
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -946,7 +946,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 180
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -1240,16 +1240,16 @@
     #define eSteps 335   //MATRIX
 #endif
 #ifdef TITAN
-    #define eSteps 431   //STOCK
+    #define eSteps 445   //STOCK
 #endif
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.121, 80.121, 399.778, eSteps }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80.121, 80.121, 400, eSteps }
 
 /**
  * Default Max Feed Rate (mm/s)
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 30, 60 }
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 40, 50 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1278,7 +1278,7 @@
  *   M204 T    Travel Acceleration
  */
 #define DEFAULT_ACCELERATION          800     // X, Y, Z and E acceleration for printing moves
-#define DEFAULT_RETRACT_ACCELERATION  3000   // E acceleration for retracts
+#define DEFAULT_RETRACT_ACCELERATION  10000   // E acceleration for retracts
 #define DEFAULT_TRAVEL_ACCELERATION   2000    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
@@ -1316,7 +1316,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.02 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.032 // (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -2108,8 +2108,8 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 30          // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 5    // Don't use more than 7 points per axis, implementation limited.
+  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
@@ -2136,7 +2136,7 @@
 #endif
 
 #if ENABLED(LEVEL_BED_CORNERS)
-  #define LEVEL_CORNERS_INSET_LFRB { 55, 55, 55, 55 } // (mm) Left, Front, Right, Back insets
+  #define LEVEL_CORNERS_INSET_LFRB { 40, 40, 40, 40 } // (mm) Left, Front, Right, Back insets
   #define LEVEL_CORNERS_HEIGHT      0.0   // (mm) Z height of nozzle at leveling points
   #define LEVEL_CORNERS_Z_HOP       4.0   // (mm) Z height of nozzle between leveling points
   #define LEVEL_CENTER_TOO              // Move to the center after the last corner
